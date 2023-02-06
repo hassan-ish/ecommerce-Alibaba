@@ -1,14 +1,11 @@
-import { Route, Routes } from "react-router-dom";
-import Home from "./Pages/Home";
-import StoreList from "./Pages/StoreList";
+import { useRoutes } from "react-router-dom";
+import { router } from "./router";
 
 function App() {
+  const routes = useRoutes(router)
   return (
     <div className="App">
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/store" element={<StoreList />} />
-      </Routes>
+      {routes}
     </div>
   );
 }
